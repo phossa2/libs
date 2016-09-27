@@ -1,0 +1,63 @@
+{
+    "name": "phossa2/libs",
+    "license": "MIT",
+    "type": "library",
+    "description": "Bundle of phossa2 libraries for the framework.",
+    "keywords": ["libs", "phossa", "phossa2", "framework"],
+    "homepage": "https://github.com/phossa2/libs",
+    "authors": [
+        {
+            "name": "Hong Zhang",
+            "homepage": "https://github.com/phossa2"
+        }
+    ],
+    "require": {
+        "php": "~5.4.0|~7.0.0",
+        "psr/log": "1.*",
+        "psr/cache": "1.*",
+        "wixel/gump": "dev-master",
+        "psr/http-message-implementation": "1.*",
+        "container-interop/container-interop": "1.*"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "4.*",
+        "squizlabs/php_codesniffer": "2.*"
+    },
+    "autoload": {
+        "psr-4": { "Phossa2\\": "src/Phossa2/" }
+    },
+    "replace": {
+        "phossa2/cache": "2.*",
+        "phossa2/config": "2.*",
+        "phossa2/db": "2.*",
+        "phossa2/di": "2.*",
+        "phossa2/env": "2.*",
+        "phossa2/event": "2.*",
+        "phossa2/logger": "2.*",
+        "phossa2/middleware": "2.*",
+        "phossa2/query": "2.*",
+        "phossa2/route": "2.*",
+        "phossa2/shared": "2.*",
+        "phossa2/storage": "2.*",
+        "phossa2/uuid": "2.*",
+        "phossa2/validate": "2.*"
+    },
+    "scripts": {
+        "test": "phpunit",
+        "check": "phpcs --standard=psr2 src/",
+        "format": "phpcbf --standard=psr2 src/"
+    },
+    "config": {
+        "platform": {
+            "php": "5.4.0"
+        }
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "2.1-dev"
+        }
+    },
+    "archive": {
+        "exclude": [ "!vendor", "tests", "composer.lock" ]
+    }
+}
