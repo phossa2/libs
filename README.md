@@ -64,7 +64,7 @@ Dependencies
 
 - wixel/gump >= 1.4,
 
-- psr/http-message-implementation ~1.0
+- zendframework/zend-diactoros ^1.3.0
 
 - container-interop/container-interop ~1.0
 
