@@ -1,7 +1,7 @@
 {
     "name": "phossa2/libs",
     "license": "MIT",
-    "type": "library",
+    "type": "composer-plugin",
     "description": "Bundle of phossa2 libraries for the framework.",
     "keywords": ["libs", "phossa", "phossa2", "framework"],
     "homepage": "https://github.com/phossa2/libs",
@@ -57,7 +57,8 @@
     "extra": {
         "branch-alias": {
             "dev-master": "2.1-dev"
-        }
+        },
+        "class": "Phossa2\\Composer\\Plugin"
     },
     "archive": {
         "exclude": [ "!vendor", "tests", "composer.lock" ]
