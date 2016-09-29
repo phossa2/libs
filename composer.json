@@ -13,6 +13,7 @@
     ],
     "require": {
         "php": "~5.4.0|~7.0.0",
+        "composer-plugin-api": "^1.0",
         "psr/log": "1.*",
         "psr/cache": "1.*",
         "wixel/gump": "dev-master",
@@ -28,6 +29,7 @@
     },
     "replace": {
         "phossa2/cache": "2.*",
+        "phossa2/composer": "2.*",
         "phossa2/config": "2.*",
         "phossa2/db": "2.*",
         "phossa2/di": "2.*",
