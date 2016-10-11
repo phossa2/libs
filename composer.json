@@ -39,6 +39,7 @@
         "phossa2/middleware": "2.*",
         "phossa2/query": "2.*",
         "phossa2/route": "2.*",
+        "phossa2/session": "2.*",
         "phossa2/shared": "2.*",
         "phossa2/storage": "2.*",
         "phossa2/uuid": "2.*",

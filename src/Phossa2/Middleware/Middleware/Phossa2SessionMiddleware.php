@@ -14,50 +14,50 @@
 
 namespace Phossa2\Middleware\Middleware;
 
+use Phossa2\Session\Carton;
 use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\ResponseInterface;
+use Phossa2\Session\Interfaces\SessionInterface;
 
 /**
- * UuidTrackingMiddleware
+ * Phossa2SessionMiddleware
  *
- * Tracking user with followings.
- *
- * - unique user uuid
- * - current session uuid
- * - current request uuid
- *
- * @package Phossa2\Middlewaer
+ * @package Phossa2\Middleware
  * @author  Hong Zhang <phossa@126.com>
  * @see     MiddlewareAbstract
- * @version 2.0.0
- * @since   2.0.0 added
+ * @version 2.1.0
+ * @since   2.1.0 added
  */
-class UuidTrackingMiddleware extends MiddlewareAbstract
+class Phossa2SessionMiddleware extends MiddlewareAbstract
 {
     /**
-     * track user cookie name
-     *
-     * @var    string
+     * @var    SessionInterface
      * @access protected
      */
-    protected $user_cookie = 'userTrack';
+    protected $session;
 
     /**
-     * @param  string $trackName
+     * Inject the session object
+     *
+     * @param  SessionInterface $session
      * @access public
      */
-    public function __construct(array $settings = [])
+    public function __construct(SessionInterface $session)
     {
-        $this->setProperties($settings);
+        $this->session = $session;
+
+        // set as default session
+        Carton::setDefaultSession($this->session);
     }
 
     /**
      * {@inheritDoc}
      */
-    protected function before(
+    protected function after(
         RequestInterface $request,
         ResponseInterface $response
     )/* : ResponseInterface */ {
+        $this->session->close();
         return $response;
     }
 }
